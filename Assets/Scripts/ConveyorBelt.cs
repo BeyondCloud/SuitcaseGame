@@ -18,7 +18,10 @@ public class ConveyorBelt : MonoBehaviour {
 		
 		Rigidbody rigidbody = collision.gameObject.rigidbody;
 	//	rigidbody.AddForce(conveyorVelocity * direction);
+		if(rigidbody.tag != "afP")
 		rigidbody.velocity = conveyorVelocity * direction;
+	    else
+		rigidbody.velocity = conveyorVelocity * Vector3.forward * 3.0f;
 	}
 	
 }

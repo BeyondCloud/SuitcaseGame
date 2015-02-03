@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{C29CB800-5277-E566-D827-774E48E3F9B4}</ProjectGuid>
+	<ProjectGuid>{9CFD2A5F-0B11-2B64-7D70-EF0284DF122C}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,12 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BoxMover.cs" />
-     <Compile Include="Assets\Scripts\ConveyorBelt.cs" />
-     <Compile Include="Assets\Scripts\ConveyorCylinder.cs" />
-     <Compile Include="Assets\Scripts\DetectWhoPush.cs" />
-     <Compile Include="Assets\Scripts\Pusher.cs" />
-     <Compile Include="Assets\Scripts\RotateObj.cs" />
+     <Compile Include="Assets\Scripts\Pusher.js" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity4.6/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
