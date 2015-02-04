@@ -1,24 +1,42 @@
 ﻿#pragma strict
 
-var pointB : Transform;
-var speed : float;
-function Start () 
-{
- var pointA = transform.position; 
- while (true)
-  { 
-    yield MoveObject(transform, pointA, pointB.position, 3.0); 
-    yield MoveObject(transform, pointB.position, pointA, 3.0);
-   } 
- }
+var target : GameObject; //destination
+var liftSpeed : float = 10;//speed (it will complete the motion in 1/speed seconds)
 
-function MoveObject (thisTransform : Transform, startPos : Vector3, endPos : Vector3, time : float) 
-{
-    var i = 0.0; 
-    var rate = speed/time; 
-     while (i < 1.0) 
-       { 
-         i += Time.deltaTime * rate;
-         thisTransform.position = Vector3.Lerp(startPos, endPos, i); yield;
+public var Key : String;
+private var moving : boolean = false; //flag 
+private var movingBack : boolean = false; //back flag 
+
+private var weight : float = 0; //amount moved 
+private var startPosition : Vector3; //Where we start;
+
+function Update () 
+{ 
+  if(target)
+    { 
+     if(Input.GetKeyDown(Key))
+       {    //just pressed Jump 
+       print("w down");
+        startPosition = transform.position; //Set the start 
+        moving = true; //set flag 
+       } 
+     if(transform.position == target.transform.position)
+       {
+        moving = false; //reset flag 
+        movingBack = true;
        }
+       if(transform.position == startPosition)
+         movingBack = false;
+     if(moving) //check flag 
+       {
+        weight += Time.deltaTime * liftSpeed; //amount 
+        transform.position = Vector3.Lerp(startPosition, target.transform.position, weight);
+       } 
+       if(movingBack) //check flag 
+       {
+        weight -= Time.deltaTime * liftSpeed; //amount 
+        transform.position = Vector3.Lerp(startPosition, target.transform.position , weight);
+       } 
+       
+    } 
 }

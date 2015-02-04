@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Pusher : MonoBehaviour {
+public class Pusher: MonoBehaviour {
 
 
 	public Transform target;
@@ -27,6 +27,7 @@ public class Pusher : MonoBehaviour {
 
 			}
 		}
+
 		
 	}
 }
