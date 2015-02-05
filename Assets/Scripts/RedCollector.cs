@@ -3,7 +3,7 @@ using System.Collections;
 
 public class RedCollector : MonoBehaviour {
 
-
+	public LifeBar lifebar;
 	public int addScore = 5;
 	
 	public int minusScore = 10;
@@ -12,10 +12,15 @@ public class RedCollector : MonoBehaviour {
 		
 
 		if(collision.gameObject.name == "SuitCaseRed(Clone)")
-			ScoreMgr.score += 5;
-		else
+		{
+			lifebar.ScaleMgr();
+			
+			ScoreMgr.score += addScore * LifeBar.scaleFactor;
+		}
+		{
+			lifebar.missPenalty();
 			ScoreMgr.score -= minusScore;
-
+		}
 		SuitCaseMaker.collectCounter++;
 		Destroy(collision.gameObject);
 		

@@ -51,7 +51,7 @@ public class SuitCaseMaker : MonoBehaviour {
 		if(!waveStart)
 		{
 			//StartCoroutine( HandleIt() );
-			animPlayer.test();
+
 			//anim.CrossFade("WaveFlyIn", 0F);;
       		waveMgr(wave);
 		}
@@ -65,15 +65,23 @@ public class SuitCaseMaker : MonoBehaviour {
 		switch(wave)
 		{
 	    	case 0:
+			animPlayer.callWave();
 			    boxNumInWave = 5;
 				waveStart = true;
 			    InvokeRepeating ("MakeBox", waitBeforeSpawn, spawnTime);
 
 			break;
 		    case 1:
+			    animPlayer.callWave2();
 			    boxNumInWave = 10;
 				waveStart = true;
 			    InvokeRepeating ("MakeBox",  waitBeforeSpawn, spawnTime);
+			break;
+		    case 2:
+			    animPlayer.callFinalWave();
+				boxNumInWave = 12;
+				waveStart = true;
+				InvokeRepeating ("MakeBox",  waitBeforeSpawn, spawnTime);
 			break;
 
 

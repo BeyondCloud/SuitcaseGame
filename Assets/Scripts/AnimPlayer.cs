@@ -14,9 +14,18 @@ public class AnimPlayer : MonoBehaviour {
 
 
 
-	public void test() 
+	public void callWave() 
 	{
 		anim.SetTrigger("waveDisplay");
-	
 	}
+	public void callWave2() 
+	{
+		anim.SetTrigger("waveDisplay2");
+	}
+	public void callFinalWave() 
+	{
+		anim.SetTrigger("finalWave");
+	}
+
+
 }

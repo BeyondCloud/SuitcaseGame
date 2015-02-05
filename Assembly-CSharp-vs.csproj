@@ -53,10 +53,12 @@
      <Compile Include="Assets\Scripts\ConveyorCylinder.cs" />
      <Compile Include="Assets\Scripts\CylinderDetect.cs" />
      <Compile Include="Assets\Scripts\DetectWhoPush.cs" />
+     <Compile Include="Assets\Scripts\LifeBar.cs" />
      <Compile Include="Assets\Scripts\PushByClick.cs" />
      <Compile Include="Assets\Scripts\Pusher.cs" />
      <Compile Include="Assets\Scripts\RedCollector.cs" />
      <Compile Include="Assets\Scripts\RotateObj.cs" />
+     <Compile Include="Assets\Scripts\ScaleFactorUI.cs" />
      <Compile Include="Assets\Scripts\ScoreMgr.cs" />
      <Compile Include="Assets\Scripts\SuitCaseMaker.cs" />
      <Compile Include="Assets\Scripts\YellowCollector.cs" />

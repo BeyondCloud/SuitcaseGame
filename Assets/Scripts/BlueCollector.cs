@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BlueCollector : MonoBehaviour {
 
-
+	public LifeBar lifebar;
 	public int addScore = 5;
 	
 	public int minusScore = 10;
@@ -11,10 +11,16 @@ public class BlueCollector : MonoBehaviour {
 	void OnCollisionEnter(Collision collision) {
 
 		if(collision.gameObject.name == "SuitCaseBlue(Clone)")
-			ScoreMgr.score += 5;
+		{
+			lifebar.ScaleMgr();
+			
+			ScoreMgr.score += addScore * LifeBar.scaleFactor;
+		}
 		else
+		{
+			lifebar.missPenalty();
 			ScoreMgr.score -= minusScore;
-
+		}
 		SuitCaseMaker.collectCounter++;
 		Destroy(collision.gameObject);
 		

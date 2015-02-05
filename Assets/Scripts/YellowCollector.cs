@@ -4,7 +4,7 @@ using System.Collections;
 public class YellowCollector : MonoBehaviour {
 
 
-
+	public LifeBar lifebar;
 	public int addScore = 5;
 
 	public int minusScore = 10;
@@ -13,9 +13,19 @@ public class YellowCollector : MonoBehaviour {
 	void OnCollisionEnter(Collision collision) {
 
 		if(collision.gameObject.name == "SuitCaseYellow(Clone)")
-			ScoreMgr.score += addScore;
+		{
+
+			lifebar.ScaleMgr();
+
+			ScoreMgr.score += addScore * LifeBar.scaleFactor;
+		}
+			
 		else
+		{
+			lifebar.missPenalty();
 			ScoreMgr.score -= minusScore;
+		}
+			
 
 		SuitCaseMaker.collectCounter++;
 		Destroy(collision.gameObject);
