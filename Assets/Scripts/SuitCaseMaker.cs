@@ -3,23 +3,91 @@ using System.Collections;
 
 public class SuitCaseMaker : MonoBehaviour {
 
+
+	public AnimPlayer animPlayer;
 	
 	public GameObject box1;
 	public GameObject box2;
 	public GameObject box3;
-
-
+	private  int boxNumInWave = 5;
 	public float spawnTime = 1.0f;
+	public float waitBeforeSpawn = 1.5f;
+
+	private int counter = 0;
+	public static int collectCounter = 0;
+	Animator anim;
+	private int wave = 0;
 	int randomNumber;
-	void Start () {
-		InvokeRepeating ("MakeBox", spawnTime, spawnTime);
+	bool waveStart;
+
+	void Start()
+	{
+
+		anim = gameObject.GetComponent<Animator>();
+
 	}
-	
+	void FixedUpdate()
+	{
+
+
+		if(counter >= boxNumInWave)
+		{
+
+			CancelInvoke();
+
+
+		}
+
+		if(collectCounter == boxNumInWave)
+		{
+
+			counter = 0;
+			collectCounter = 0;
+			waveStart = false;
+			wave++;
+		}
+
+		
+		if(!waveStart)
+		{
+			//StartCoroutine( HandleIt() );
+			animPlayer.test();
+			//anim.CrossFade("WaveFlyIn", 0F);;
+      		waveMgr(wave);
+		}
+		  
+
+
+
+	}
+	void waveMgr(int wave)
+	{
+		switch(wave)
+		{
+	    	case 0:
+			    boxNumInWave = 5;
+				waveStart = true;
+			    InvokeRepeating ("MakeBox", waitBeforeSpawn, spawnTime);
+
+			break;
+		    case 1:
+			    boxNumInWave = 10;
+				waveStart = true;
+			    InvokeRepeating ("MakeBox",  waitBeforeSpawn, spawnTime);
+			break;
+
+
+
+		}
+	}
+
 	// Update is called once per frame
 	void MakeBox()
 	{
+
+		counter++;
+
 		randomNumber = Random.Range (0, 3);
-	//	Instantiate (box, transform.position ,transform.rotation);
 
 		switch(randomNumber)
 		{
@@ -33,5 +101,11 @@ public class SuitCaseMaker : MonoBehaviour {
 
 
 
+	}
+	 IEnumerator HandleIt()
+	{
+		print(Time.time);
+		yield return new WaitForSeconds( 3 );
+		print(Time.time);
 	}
 }

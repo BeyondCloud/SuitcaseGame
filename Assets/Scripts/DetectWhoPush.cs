@@ -6,8 +6,9 @@ public class DetectWhoPush: MonoBehaviour {
 
 
 	void OnCollisionEnter(Collision collision) {
-		if(collision.gameObject.tag == "punch")
-			collision.gameObject.tag = "afP";
+
+		Physics.IgnoreCollision(collision.gameObject.collider,this.collider);
+		collision.gameObject.tag = "afP";
 
 	}
 
