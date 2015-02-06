@@ -34,6 +34,7 @@ public class LifeBar : MonoBehaviour {
 
 		}
 
+
 	}
 
 	public void ScaleMgr()

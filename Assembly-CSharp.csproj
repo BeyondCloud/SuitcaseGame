@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AnimPlayer.cs" />
+     <Compile Include="Assets\Scripts\AutoFade.cs" />
+     <Compile Include="Assets\Scripts\AutoSpawn.cs" />
      <Compile Include="Assets\Scripts\BlueCollector.cs" />
      <Compile Include="Assets\Scripts\BoxMover.cs" />
      <Compile Include="Assets\Scripts\ConveyorBelt.cs" />
@@ -61,6 +63,7 @@
      <Compile Include="Assets\Scripts\ScaleFactorUI.cs" />
      <Compile Include="Assets\Scripts\ScoreMgr.cs" />
      <Compile Include="Assets\Scripts\SuitCaseMaker.cs" />
+     <Compile Include="Assets\Scripts\SuitCaseRespawn.cs" />
      <Compile Include="Assets\Scripts\YellowCollector.cs" />
      <Compile Include="Assets\Scripts\trashCollector.cs" />
      <None Include="Assets\Font\LuckiestGuy\LICENSE.txt" />
