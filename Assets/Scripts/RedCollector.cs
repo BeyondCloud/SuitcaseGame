@@ -17,6 +17,7 @@ public class RedCollector : MonoBehaviour {
 			
 			ScoreMgr.score += addScore * LifeBar.scaleFactor;
 		}
+		else
 		{
 			lifebar.missPenalty();
 			ScoreMgr.score -= minusScore;

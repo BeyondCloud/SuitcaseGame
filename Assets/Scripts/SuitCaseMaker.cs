@@ -5,7 +5,7 @@ public class SuitCaseMaker : MonoBehaviour {
 
 
 	public AnimPlayer animPlayer;
-	
+	public Animator ClipPlane;
 	public GameObject box1;
 	public GameObject box2;
 	public GameObject box3;
@@ -16,6 +16,7 @@ public class SuitCaseMaker : MonoBehaviour {
 	private int counter = 0;
 	public static int collectCounter = 0;
 	Animator anim;
+
 	private int wave = 0;
 	int randomNumber;
 	bool waveStart;
@@ -24,6 +25,8 @@ public class SuitCaseMaker : MonoBehaviour {
 	{
 
 		anim = gameObject.GetComponent<Animator>();
+
+		ClipPlane.SetTrigger("ClipPlaneOut");
 
 	}
 	void FixedUpdate()
@@ -53,7 +56,8 @@ public class SuitCaseMaker : MonoBehaviour {
 			//StartCoroutine( HandleIt() );
 
 			//anim.CrossFade("WaveFlyIn", 0F);;
-      		waveMgr(wave);
+			waveMgr(wave);
+      		
 		}
 		  
 
@@ -65,21 +69,22 @@ public class SuitCaseMaker : MonoBehaviour {
 		switch(wave)
 		{
 	    	case 0:
-			animPlayer.callWave();
+			    StartCoroutine( HandleIt() );
+
 			    boxNumInWave = 5;
 				waveStart = true;
-			    InvokeRepeating ("MakeBox", waitBeforeSpawn, spawnTime);
+			    InvokeRepeating ("MakeBox", waitBeforeSpawn +2.0f, spawnTime);
 
 			break;
 		    case 1:
 			    animPlayer.callWave2();
-			    boxNumInWave = 10;
+			    boxNumInWave = 8;
 				waveStart = true;
 			    InvokeRepeating ("MakeBox",  waitBeforeSpawn, spawnTime);
 			break;
 		    case 2:
 			    animPlayer.callFinalWave();
-				boxNumInWave = 12;
+				boxNumInWave = 10;
 				waveStart = true;
 				InvokeRepeating ("MakeBox",  waitBeforeSpawn, spawnTime);
 			break;
@@ -113,7 +118,8 @@ public class SuitCaseMaker : MonoBehaviour {
 	 IEnumerator HandleIt()
 	{
 		print(Time.time);
-		yield return new WaitForSeconds( 3 );
+		yield return new WaitForSeconds( 2.0f );
+		animPlayer.callWave();
 		print(Time.time);
 	}
 }

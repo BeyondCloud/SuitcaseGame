@@ -51,11 +51,15 @@
      <Compile Include="Assets\Scripts\AutoSpawn.cs" />
      <Compile Include="Assets\Scripts\BlueCollector.cs" />
      <Compile Include="Assets\Scripts\BoxMover.cs" />
+     <Compile Include="Assets\Scripts\BtnOnClick.cs" />
+     <Compile Include="Assets\Scripts\ClickPlayer.cs" />
      <Compile Include="Assets\Scripts\ConveyorBelt.cs" />
      <Compile Include="Assets\Scripts\ConveyorCylinder.cs" />
      <Compile Include="Assets\Scripts\CylinderDetect.cs" />
      <Compile Include="Assets\Scripts\DetectWhoPush.cs" />
+     <Compile Include="Assets\Scripts\LevelMgr.cs" />
      <Compile Include="Assets\Scripts\LifeBar.cs" />
+     <Compile Include="Assets\Scripts\Mask.cs" />
      <Compile Include="Assets\Scripts\PushByClick.cs" />
      <Compile Include="Assets\Scripts\Pusher.cs" />
      <Compile Include="Assets\Scripts\RedCollector.cs" />
@@ -66,6 +70,7 @@
      <Compile Include="Assets\Scripts\SuitCaseRespawn.cs" />
      <Compile Include="Assets\Scripts\YellowCollector.cs" />
      <Compile Include="Assets\Scripts\trashCollector.cs" />
+     <None Include="Assets\Shader\TextureMask.shader" />
      <None Include="Assets\Font\LuckiestGuy\LICENSE.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity4.6/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
