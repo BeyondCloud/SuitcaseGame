@@ -57,9 +57,13 @@
      <Compile Include="Assets\Scripts\ConveyorCylinder.cs" />
      <Compile Include="Assets\Scripts\CylinderDetect.cs" />
      <Compile Include="Assets\Scripts\DetectWhoPush.cs" />
+     <Compile Include="Assets\Scripts\FixViewport.cs" />
      <Compile Include="Assets\Scripts\LevelMgr.cs" />
      <Compile Include="Assets\Scripts\LifeBar.cs" />
      <Compile Include="Assets\Scripts\Mask.cs" />
+     <Compile Include="Assets\Scripts\Option\BGMplay.cs" />
+     <Compile Include="Assets\Scripts\Option\OptionMenu.cs" />
+     <Compile Include="Assets\Scripts\Option\SEPlay.cs" />
      <Compile Include="Assets\Scripts\PushByClick.cs" />
      <Compile Include="Assets\Scripts\Pusher.cs" />
      <Compile Include="Assets\Scripts\RedCollector.cs" />

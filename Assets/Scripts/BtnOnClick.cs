@@ -4,7 +4,10 @@ using UnityEngine.UI;
 public class BtnOnClick : MonoBehaviour {
 
 
-	public Animator clipPlane;
+	public Animator loading;
+	public Animator now;
+	public Animator Op;
+	private bool OpClose = true;
 	private bool isPause;
 public void Quit()
 	{
@@ -12,10 +15,29 @@ public void Quit()
 	}
 public void StartGame()
 	{
-		clipPlane.SetTrigger("clipPlaneIn");
+		loading.SetTrigger("loadingIn");
+		now.SetTrigger("nowIn");
+
 		StartCoroutine( WaitClipPlaneAnimToStart() );
 
 	}
+public void OpMenu()
+	{
+		if(OpClose)
+		{
+			Op.SetTrigger("openOPMenu");
+			OpClose = false;
+		}
+		    
+		else
+		{
+			Op.SetTrigger("closeOPMenu");
+			OpClose = true;
+		}
+			
+
+	}
+
 public void PauseGame()
 	{
 	   if(!isPause)

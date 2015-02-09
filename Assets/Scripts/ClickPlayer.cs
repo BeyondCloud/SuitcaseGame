@@ -13,6 +13,8 @@ public class ClickPlayer : MonoBehaviour {
 	
 	void OnMouseDown()
 	{
+		audio.volume = OptionMenu.seVolume;
+		audio.Play();
 		anim.SetTrigger("click");
 	}
 

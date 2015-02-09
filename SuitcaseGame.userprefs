@@ -1,11 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BtnOnClick.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Option\OptionMenu.cs">
     <Files>
-      <File FileName="Assets\Scripts\SuitCaseMaker.cs" Line="91" Column="4" />
-      <File FileName="Assets\Scripts\ClickPlayer.cs" Line="7" Column="1" />
-      <File FileName="Assets\Scripts\BtnOnClick.cs" Line="34" Column="3" />
-      <File FileName="Assets\Scripts\LevelMgr.cs" Line="26" Column="3" />
+      <File FileName="Assets\Scripts\Option\SEPlay.cs" Line="13" Column="2" />
+      <File FileName="Assets\Scripts\Option\OptionMenu.cs" Line="6" Column="33" />
+      <File FileName="Assets\Scripts\RedCollector.cs" Line="22" Column="17" />
+      <File FileName="Assets\Scripts\BlueCollector.cs" Line="21" Column="17" />
+      <File FileName="Assets\Scripts\YellowCollector.cs" Line="29" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -19,6 +19,10 @@ public class RedCollector : MonoBehaviour {
 		}
 		else
 		{
+			if(OptionMenu.isVibrant != 0 )
+			{
+				Handheld.Vibrate();
+			}
 			lifebar.missPenalty();
 			ScoreMgr.score -= minusScore;
 		}

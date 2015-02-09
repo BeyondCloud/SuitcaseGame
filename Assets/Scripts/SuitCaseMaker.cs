@@ -3,9 +3,9 @@ using System.Collections;
 
 public class SuitCaseMaker : MonoBehaviour {
 
-
+	public Animator loading;
+	public Animator now;
 	public AnimPlayer animPlayer;
-	public Animator ClipPlane;
 	public GameObject box1;
 	public GameObject box2;
 	public GameObject box3;
@@ -26,7 +26,8 @@ public class SuitCaseMaker : MonoBehaviour {
 
 		anim = gameObject.GetComponent<Animator>();
 
-		ClipPlane.SetTrigger("ClipPlaneOut");
+		loading.SetTrigger("loadingOut");
+		now.SetTrigger("nowOut");
 
 	}
 	void FixedUpdate()
