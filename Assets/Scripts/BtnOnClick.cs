@@ -11,10 +11,12 @@ public class BtnOnClick : MonoBehaviour {
 	private bool isPause;
 public void Quit()
 	{
+
 		Application.Quit();
 	}
 public void StartGame()
 	{
+		playClickSound();
 		loading.SetTrigger("loadingIn");
 		now.SetTrigger("nowIn");
 
@@ -23,6 +25,7 @@ public void StartGame()
 	}
 public void OpMenu()
 	{
+		playClickSound();
 		if(OpClose)
 		{
 			Op.SetTrigger("openOPMenu");
@@ -52,10 +55,15 @@ public void PauseGame()
 		}
 			
 	}
-	IEnumerator WaitClipPlaneAnimToStart()
+IEnumerator WaitClipPlaneAnimToStart()
 	{
 
 		yield return new WaitForSeconds( 3 );
-		Application.LoadLevel("Level0");
+		Application.LoadLevel("calendar");
+	}
+	void playClickSound()
+	{
+		audio.volume = OptionMenu.seVolume;
+		audio.Play();
 	}
 }

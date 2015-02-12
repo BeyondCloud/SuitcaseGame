@@ -4,10 +4,11 @@ using System.Collections;
 public class SEPlay : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		audio.volume = OptionMenu.seVolume;
 		audio.Play();
 	}
-	
+
+
 
 }

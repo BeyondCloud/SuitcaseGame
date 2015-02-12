@@ -21,6 +21,7 @@ function Update()
        print("w down");
          if(timer  > 0.3f)
          {
+         
           timer = 0;
           startPosition = transform.position; //Set the start 
           moving = true; //set flag 
@@ -51,6 +52,8 @@ function Update()
 }
 function OnMouseDown()
 {
+         
+         audio.Play();
          print("mouse down");
             if(timer  > 0.3f)
          {

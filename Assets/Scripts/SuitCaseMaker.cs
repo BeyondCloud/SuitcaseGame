@@ -14,7 +14,7 @@ public class SuitCaseMaker : MonoBehaviour {
 	public float waitBeforeSpawn = 1.5f;
 
 	private int counter = 0;
-	public static int collectCounter = 0;
+
 	Animator anim;
 
 	private int wave = 0;
@@ -42,11 +42,11 @@ public class SuitCaseMaker : MonoBehaviour {
 
 		}
 
-		if(collectCounter == boxNumInWave)
+		if(SuitcaseCounter. collectCounter == boxNumInWave)
 		{
 
 			counter = 0;
-			collectCounter = 0;
+			SuitcaseCounter.collectCounter = 0;
 			waveStart = false;
 			wave++;
 		}
@@ -118,9 +118,9 @@ public class SuitCaseMaker : MonoBehaviour {
 	}
 	 IEnumerator HandleIt()
 	{
-		print(Time.time);
+
 		yield return new WaitForSeconds( 2.0f );
 		animPlayer.callWave();
-		print(Time.time);
+	
 	}
 }

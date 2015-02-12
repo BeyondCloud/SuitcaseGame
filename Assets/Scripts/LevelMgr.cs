@@ -3,24 +3,22 @@ using System.Collections;
 using UnityEngine.UI;
 public class LevelMgr : MonoBehaviour {
 
-
+	public Animator levelBoard;
 	public static int currentLevel = 1;
-	static int currentPressDate;
+	public static int currentPressDate;
+	public AudioSource clickSound;
 	int maxLevel = 3;
 	Button btn;
-	Text text;
-	public Image post;
+	public GameObject postIt;
 	void Start()
 	{
 		btn = gameObject.GetComponent<Button>();
-		text = this.GetComponentInChildren<Text>();
 		if(btn.name != "1")
 		 btn.interactable = false;
 		else 
 	     btn.interactable = true;
 
-		text.enabled = false;
-		post.enabled = false;
+		postIt.SetActive(false);
 		currentPressDate = currentLevel;
 
 	}
@@ -29,14 +27,14 @@ public class LevelMgr : MonoBehaviour {
 
 		if(int.Parse(btn.name) == currentPressDate)
 		{
-			text.enabled = true;
-			post.enabled = true;
+			postIt.SetActive(true);
+
 		}
 			
 		else
 		{
-			text.enabled = false;
-			post.enabled = false;
+			postIt.SetActive(false);
+
 
 		}
 			
@@ -46,14 +44,24 @@ public class LevelMgr : MonoBehaviour {
 	}
 	public void Onclick()
 	{
+		clickSound.volume = OptionMenu.seVolume;
 
-		  currentPressDate = int.Parse(btn.name);
+		clickSound.Play();
+		if(currentPressDate != int.Parse(btn.name))
+		{
+			levelBoard.SetTrigger("levelBoardUp");
+		}
+
+		currentPressDate = int.Parse(btn.name);
 		if(currentLevel != maxLevel)
-		  currentLevel++;
+		{
+			levelBoard.SetTrigger("levelBoardDown");
 
+		}
 
+		
 	}
-   
-
-
+	
+	
+	
 }
