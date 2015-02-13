@@ -12,6 +12,11 @@ public class Pusher : MonoBehaviour {
 	private float timer;
 	private  float weight = 0; //amount moved 
 	private Vector3 startPosition ; //Where we start;
+
+
+	
+
+
 	void Update() 
 	{ 
 		timer += Time.deltaTime;
@@ -32,6 +37,8 @@ public class Pusher : MonoBehaviour {
 					moving = true; //set flag 
 				}
 			} 
+
+		/*
 			if(transform.position == target.transform.position)
 			{
 				moving = false; //reset flag 
@@ -53,8 +60,20 @@ public class Pusher : MonoBehaviour {
 				transform.position = Vector3.Lerp(startPosition, target.transform.position , weight);
 			} 
 
+
+         */
+
+
+
+
+
+
 	}
-	void OnMouseDown()
+
+
+
+
+	void push()
 	{
 		audio.volume  = OptionMenu.seVolume;
 		audio.Play();
@@ -67,4 +86,5 @@ public class Pusher : MonoBehaviour {
 		}
 		
 	}
+
 }

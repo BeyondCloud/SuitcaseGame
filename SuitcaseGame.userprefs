@@ -1,13 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Level\Level1.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Level\RayCastPush.cs">
     <Files>
-      <File FileName="Assets\Scripts\Level\ScoreAnim.cs" Line="56" Column="22" />
-      <File FileName="Assets\Scripts\ScoreMgr.cs" Line="20" Column="2" />
-      <File FileName="Assets\Scripts\PlayerInfo.cs" Line="6" Column="36" />
-      <File FileName="Assets\Scripts\Level\Level1.cs" Line="94" Column="44" />
-      <File FileName="Assets\Scripts\AnimPlayer.cs" Line="30" Column="2" />
-      <File FileName="Assets\Scripts\Level\CoinJudge.cs" Line="18" Column="32" />
+      <File FileName="Assets\Scripts\Level\RayCastPush.cs" Line="32" Column="30" />
+      <File FileName="Assets\Scripts\Pusher.cs" Line="63" Column="1" />
+      <File FileName="E:\Surviving_game\Assets\Scripts\PlayerMovementByCenter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Level\RayCastPush.cs" Line="59" Column="1" />
+      <File FileName="Assets\Scripts\LevelMgr.cs" Line="50" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

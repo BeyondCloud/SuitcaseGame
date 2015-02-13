@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\Level\CoinJudge.cs" />
      <Compile Include="Assets\Scripts\Level\JudgeList.cs" />
      <Compile Include="Assets\Scripts\Level\Level1.cs" />
+     <Compile Include="Assets\Scripts\Level\RayCastPush.cs" />
      <Compile Include="Assets\Scripts\Level\ScoreAnim.cs" />
      <Compile Include="Assets\Scripts\Level\ThreeBtn.cs" />
      <Compile Include="Assets\Scripts\LevelMgr.cs" />
