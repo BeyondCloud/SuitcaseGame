@@ -5,11 +5,11 @@ public class ConveyorBelt : MonoBehaviour {
 	public float speed = 3.0f;
 	public Vector3 direction;
 	Vector3 CollectVecSpeed;
-	float conveyorVelocity;
+	Vector3 conveyorMove;
 	void Start()
 	{
 		CollectVecSpeed = new Vector3(0,-5.0f,35.0f);
-		conveyorVelocity = speed * Time.deltaTime;
+		conveyorMove = speed * direction;
 		
 	}
 	void OnCollisionStay(Collision collision) {
@@ -22,7 +22,7 @@ public class ConveyorBelt : MonoBehaviour {
 		Rigidbody rigidbody = collision.gameObject.rigidbody;
 	//	rigidbody.AddForce(conveyorVelocity * direction);
 		if(rigidbody.tag != "afP")
-		rigidbody.velocity = conveyorVelocity * direction;
+			rigidbody.velocity = conveyorMove;
 	    else
 		{
 			rigidbody.velocity =  CollectVecSpeed;

@@ -6,14 +6,18 @@ public class Level1: MonoBehaviour {
 	public Animator loading;
 	public Animator now;
 	public AnimPlayer animPlayer;
+	public GameObject judgeList;
 	public GameObject box1;
 	public GameObject box2;
 	public GameObject box3;
-	private  int boxNumInWave = 5;
 	public float spawnTime = 1.0f;
 	public float waitBeforeSpawn = 1.5f;
-	
+	public int silver;
+	public int gold;
+
+
 	private int counter = 0;
+	private  int boxNumInWave = 5;
 
 	Animator anim;
 	
@@ -89,8 +93,14 @@ public class Level1: MonoBehaviour {
 			waveStart = true;
 			InvokeRepeating ("MakeBox",  waitBeforeSpawn, spawnTime);
 			break;
-			
-			
+		case 3:
+		{
+			CoinJudge.silverScore = silver;
+			CoinJudge.goldScore = gold;
+			judgeList.SetActive(true);
+		}
+
+			break;
 			
 		}
 	}

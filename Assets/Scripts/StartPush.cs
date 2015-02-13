@@ -26,7 +26,7 @@ public class StartPush : MonoBehaviour {
 			Application.LoadLevel("Level1");
 			break;
 		case 2:
-			Application.LoadLevel("Level1");
+			Application.LoadLevel("Level2");
 			break;
 		case 3:
 			Application.LoadLevel("Level3");

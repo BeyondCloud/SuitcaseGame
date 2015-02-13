@@ -58,10 +58,10 @@ public void PauseGame()
 IEnumerator WaitClipPlaneAnimToStart()
 	{
 
-		yield return new WaitForSeconds( 3 );
+		yield return new WaitForSeconds( 1.5f );
 		Application.LoadLevel("calendar");
 	}
-	void playClickSound()
+void playClickSound()
 	{
 		audio.volume = OptionMenu.seVolume;
 		audio.Play();

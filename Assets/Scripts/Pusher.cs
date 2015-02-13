@@ -15,11 +15,14 @@ public class Pusher : MonoBehaviour {
 	void Update() 
 	{ 
 		timer += Time.deltaTime;
-		if(target)
-		{ 
+
 			
 			if(Input.GetKeyDown(Key) )
-			{    //just pressed Jump 
+			{   
+
+		    	audio.volume  = OptionMenu.seVolume;
+		    	audio.Play();
+
 				print("w down");
 				if(timer  > 0.3f)
 				{
@@ -49,8 +52,7 @@ public class Pusher : MonoBehaviour {
 				weight -= Time.deltaTime * liftSpeed; //amount 
 				transform.position = Vector3.Lerp(startPosition, target.transform.position , weight);
 			} 
-			
-		} 
+
 	}
 	void OnMouseDown()
 	{

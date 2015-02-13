@@ -59,8 +59,11 @@
      <Compile Include="Assets\Scripts\DestroyAfterThreeSecond.cs" />
      <Compile Include="Assets\Scripts\DetectWhoPush.cs" />
      <Compile Include="Assets\Scripts\FixViewport.cs" />
+     <Compile Include="Assets\Scripts\Level\CoinJudge.cs" />
      <Compile Include="Assets\Scripts\Level\JudgeList.cs" />
      <Compile Include="Assets\Scripts\Level\Level1.cs" />
+     <Compile Include="Assets\Scripts\Level\ScoreAnim.cs" />
+     <Compile Include="Assets\Scripts\Level\ThreeBtn.cs" />
      <Compile Include="Assets\Scripts\LevelMgr.cs" />
      <Compile Include="Assets\Scripts\LifeBar.cs" />
      <Compile Include="Assets\Scripts\Mask.cs" />
@@ -68,6 +71,7 @@
      <Compile Include="Assets\Scripts\Option\BGMplay.cs" />
      <Compile Include="Assets\Scripts\Option\OptionMenu.cs" />
      <Compile Include="Assets\Scripts\Option\SEPlay.cs" />
+     <Compile Include="Assets\Scripts\PlayerInfo.cs" />
      <Compile Include="Assets\Scripts\PushByClick.cs" />
      <Compile Include="Assets\Scripts\Pusher.cs" />
      <Compile Include="Assets\Scripts\RedCollector.cs" />

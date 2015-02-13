@@ -1,6 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Level\Level1.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Level\ScoreAnim.cs" Line="56" Column="22" />
+      <File FileName="Assets\Scripts\ScoreMgr.cs" Line="20" Column="2" />
+      <File FileName="Assets\Scripts\PlayerInfo.cs" Line="6" Column="36" />
+      <File FileName="Assets\Scripts\Level\Level1.cs" Line="94" Column="44" />
+      <File FileName="Assets\Scripts\AnimPlayer.cs" Line="30" Column="2" />
+      <File FileName="Assets\Scripts\Level\CoinJudge.cs" Line="18" Column="32" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
