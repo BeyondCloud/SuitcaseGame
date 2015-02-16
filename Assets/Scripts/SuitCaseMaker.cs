@@ -15,7 +15,6 @@ public class SuitCaseMaker : MonoBehaviour {
 
 	private int counter = 0;
 
-	Animator anim;
 
 	private int wave = 0;
 	int randomNumber;
@@ -24,7 +23,6 @@ public class SuitCaseMaker : MonoBehaviour {
 	void Start()
 	{
 
-		anim = gameObject.GetComponent<Animator>();
 
 		loading.SetTrigger("loadingOut");
 		now.SetTrigger("nowOut");

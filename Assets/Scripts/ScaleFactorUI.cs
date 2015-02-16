@@ -11,7 +11,7 @@ public class ScaleFactorUI : MonoBehaviour {
 	{
 		text = GetComponent<Text> ();
 		
-		factor = LifeBar.scaleFactor;
+		factor = CashBar.scaleFactor;
 	}
 	void FixedUpdate()
 	{

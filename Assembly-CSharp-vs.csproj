@@ -47,11 +47,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AnimPlayer.cs" />
-     <Compile Include="Assets\Scripts\AutoFade.cs" />
      <Compile Include="Assets\Scripts\AutoSpawn.cs" />
      <Compile Include="Assets\Scripts\BlueCollector.cs" />
-     <Compile Include="Assets\Scripts\BoxMover.cs" />
      <Compile Include="Assets\Scripts\BtnOnClick.cs" />
+     <Compile Include="Assets\Scripts\CashBar.cs" />
      <Compile Include="Assets\Scripts\ClickPlayer.cs" />
      <Compile Include="Assets\Scripts\ConveyorBelt.cs" />
      <Compile Include="Assets\Scripts\ConveyorCylinder.cs" />
@@ -60,8 +59,12 @@
      <Compile Include="Assets\Scripts\DetectWhoPush.cs" />
      <Compile Include="Assets\Scripts\FixViewport.cs" />
      <Compile Include="Assets\Scripts\Level\CoinJudge.cs" />
+     <Compile Include="Assets\Scripts\Level\GameOver.cs" />
      <Compile Include="Assets\Scripts\Level\JudgeList.cs" />
      <Compile Include="Assets\Scripts\Level\Level1.cs" />
+     <Compile Include="Assets\Scripts\Level\Level2.cs" />
+     <Compile Include="Assets\Scripts\Level\Level3.cs" />
+     <Compile Include="Assets\Scripts\Level\LevelEnable.cs" />
      <Compile Include="Assets\Scripts\Level\RayCastPush.cs" />
      <Compile Include="Assets\Scripts\Level\ScoreAnim.cs" />
      <Compile Include="Assets\Scripts\Level\ThreeBtn.cs" />
@@ -84,8 +87,10 @@
      <Compile Include="Assets\Scripts\SuitCaseRespawn.cs" />
      <Compile Include="Assets\Scripts\SuitcaseCounter.cs" />
      <Compile Include="Assets\Scripts\YellowCollector.cs" />
+     <Compile Include="Assets\Scripts\calendar\LevelBoard.cs" />
      <Compile Include="Assets\Scripts\rotateSprite.cs" />
      <Compile Include="Assets\Scripts\trashCollector.cs" />
+     <None Include="Assets\Fit All Screen Size\ReadMe.txt" />
      <None Include="Assets\Shader\TextureMask.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity4.6/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>

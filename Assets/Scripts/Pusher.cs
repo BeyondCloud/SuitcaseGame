@@ -2,16 +2,12 @@
 using System.Collections;
 
 public class Pusher : MonoBehaviour {
-	public GameObject target; //destination
 	public float liftSpeed = 50;//speed (it will complete the motion in 1/speed seconds)
 
 	public string  Key;
-	private bool moving = false; //flag 
-	private bool movingBack  = false; //back flag 
+
 	//private var canPress : boolean = true;
 	private float timer;
-	private  float weight = 0; //amount moved 
-	private Vector3 startPosition ; //Where we start;
 
 
 	
@@ -29,13 +25,7 @@ public class Pusher : MonoBehaviour {
 		    	audio.Play();
 
 				print("w down");
-				if(timer  > 0.3f)
-				{
-					
-					timer = 0;
-					startPosition = transform.position; //Set the start 
-					moving = true; //set flag 
-				}
+
 			} 
 
 		/*
@@ -81,8 +71,7 @@ public class Pusher : MonoBehaviour {
 		if(timer  > 0.3f)
 		{
 			timer = 0;
-			startPosition = transform.position; //Set the start 
-			moving = true; //set flag 
+
 		}
 		
 	}

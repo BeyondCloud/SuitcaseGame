@@ -7,6 +7,8 @@ public class Level1: MonoBehaviour {
 	public Animator now;
 	public AnimPlayer animPlayer;
 	public GameObject judgeList;
+
+
 	public GameObject box1;
 	public GameObject box2;
 	public GameObject box3;
@@ -15,11 +17,10 @@ public class Level1: MonoBehaviour {
 	public int silver;
 	public int gold;
 
-
 	private int counter = 0;
 	private  int boxNumInWave = 5;
 
-	Animator anim;
+
 	
 	private int wave = 0;
 	int randomNumber;
@@ -27,8 +28,7 @@ public class Level1: MonoBehaviour {
 	
 	void Start()
 	{
-		
-		anim = gameObject.GetComponent<Animator>();
+
 		
 		loading.SetTrigger("loadingOut");
 		now.SetTrigger("nowOut");
@@ -36,8 +36,9 @@ public class Level1: MonoBehaviour {
 	}
 	void FixedUpdate()
 	{
-		
-		
+
+
+
 		if(counter >= boxNumInWave)
 		{
 			
@@ -45,23 +46,22 @@ public class Level1: MonoBehaviour {
 			
 			
 		}
-		
+
 		if(SuitcaseCounter.collectCounter == boxNumInWave)
 		{
 			
 			counter = 0;
 		 	SuitcaseCounter.collectCounter = 0;
 			waveStart = false;
-			wave++;
+
+     			wave++;
 		}
 		
 		
 		if(!waveStart)
 		{
-			//StartCoroutine( HandleIt() );
-			
-			//anim.CrossFade("WaveFlyIn", 0F);;
-			waveMgr(wave);
+			if(LifeBar.life != 0)
+			   waveMgr(wave);
 			
 		}
 		
@@ -76,35 +76,46 @@ public class Level1: MonoBehaviour {
 		case 0:
 			StartCoroutine( HandleIt() );
 			
-			boxNumInWave = 5;
+			boxNumInWave = 1;
 			waveStart = true;
 			InvokeRepeating ("MakeBox", waitBeforeSpawn +2.0f, spawnTime);
 			
 			break;
 		case 1:
 			animPlayer.callWave2();
-			boxNumInWave = 6;
+			boxNumInWave = 1;
 			waveStart = true;
 			InvokeRepeating ("MakeBox",  waitBeforeSpawn, spawnTime);
 			break;
 		case 2:
 			animPlayer.callFinalWave();
-			boxNumInWave = 7;
+			boxNumInWave = 1;
 			waveStart = true;
 			InvokeRepeating ("MakeBox",  waitBeforeSpawn, spawnTime);
 			break;
 		case 3:
 		{
+			LevelMgr.currentLevel = 2;
+			PlayerPrefs.SetInt("currentLevel",LevelMgr.currentLevel);
+			 StoreHighscore(ScoreMgr.score);
+
 			CoinJudge.silverScore = silver;
 			CoinJudge.goldScore = gold;
 			judgeList.SetActive(true);
+	
 		}
 
 			break;
 			
 		}
 	}
-	
+	void StoreHighscore(int newHighscore)
+	{
+		int oldHighscore = PlayerPrefs.GetInt("highscore1", 0);    
+		if(newHighscore > oldHighscore)
+			PlayerPrefs.SetInt("highScore1", newHighscore);
+
+	}
 	// Update is called once per frame
 	void MakeBox()
 	{
@@ -134,4 +145,5 @@ public class Level1: MonoBehaviour {
 		animPlayer.callWave();
 		
 	}
+
 }

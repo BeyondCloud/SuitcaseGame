@@ -18,11 +18,16 @@ public class StartPush : MonoBehaviour {
 	}
 	IEnumerator WaitAnim()
 	{
-		
+
 		yield return new WaitForSeconds( 1.5f);
+
+		Application.LoadLevel("Level1");
+
+		/*
 		switch(LevelMgr.currentPressDate)
 		{
 		case 1:
+
 			Application.LoadLevel("Level1");
 			break;
 		case 2:
@@ -32,5 +37,6 @@ public class StartPush : MonoBehaviour {
 			Application.LoadLevel("Level3");
 			break;
 		}
+		*/
 	}
 }

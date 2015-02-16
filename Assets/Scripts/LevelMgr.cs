@@ -3,20 +3,23 @@ using System.Collections;
 using UnityEngine.UI;
 public class LevelMgr : MonoBehaviour {
 
-	public Animator levelBoard;
+	public Animator levelBoardanim;
 	public static int currentLevel = 1;
-	public static int currentPressDate;
+	public static int currentPressDate = 1;
+	public static bool updateLevelBoard = false;
 	public AudioSource clickSound;
-	int maxLevel = 3;
 	Button btn;
 	public GameObject postIt;
 	void Start()
 	{
 		btn = gameObject.GetComponent<Button>();
-		if(btn.name != "1")
-		 btn.interactable = false;
+
+		currentLevel = PlayerPrefs.GetInt("currentLevel");
+		updateLevelBoard = true;
+		if(int.Parse(btn.name) <= currentLevel)
+			btn.interactable = true;
 		else 
-	     btn.interactable = true;
+	     	btn.interactable = false;
 
 		postIt.SetActive(false);
 		currentPressDate = currentLevel;
@@ -43,25 +46,28 @@ public class LevelMgr : MonoBehaviour {
 			btn.interactable = true;
 	}
 	public void Onclick()
-	{
-		clickSound.volume = OptionMenu.seVolume;
+	{   
 
+		updateLevelBoard = false;
+		clickSound.volume = OptionMenu.seVolume;
 		clickSound.Play();
 		if(currentPressDate != int.Parse(btn.name))
 		{
-			levelBoard.SetTrigger("levelBoardUp");
+			StartCoroutine(waitLevelboardUpdate());
+			levelBoardanim.SetTrigger("levelBoardUp");
 		}
-
 		currentPressDate = int.Parse(btn.name);
-		if(currentLevel != maxLevel)
-		{
-			levelBoard.SetTrigger("levelBoardDown");
 
-		}
+
 
 		
 	}
-	
+	IEnumerator waitLevelboardUpdate()
+	{
+		yield return new WaitForSeconds( 0.4f);
+		updateLevelBoard = true;
+	}
+
 	
 	
 }

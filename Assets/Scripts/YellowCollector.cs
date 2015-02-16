@@ -4,7 +4,8 @@ using System.Collections;
 public class YellowCollector : MonoBehaviour {
 
 
-	public LifeBar lifebar;
+	public CashBar cashBar;
+	public LifeBar lifeBar;
 	public int addScore = 5;
 	public int minusScore = 10;
 	public ParticleSystem cashParticle;
@@ -16,21 +17,22 @@ public class YellowCollector : MonoBehaviour {
 		if(collision.gameObject.name == "SuitCaseYellow(Clone)")
 		{
 			cashParticle.Play();
-			lifebar.ScaleMgr();
+			cashBar.ScaleMgr();
 			audio.volume = OptionMenu.seVolume;
 			audio.Play();
-			ScoreMgr.score += addScore * LifeBar.scaleFactor;
+			ScoreMgr.score += addScore * CashBar.scaleFactor;
 		}
 			
 		else
 		{
+			lifeBar.lossLife();
 			audio.volume = OptionMenu.seVolume;
 			audio.PlayOneShot(wrong);
 			if(OptionMenu.isVibrant != 0 )
 			{
 				Handheld.Vibrate();
 			}
-			lifebar.missPenalty();
+			cashBar.missPenalty();
 			ScoreMgr.score -= minusScore;
 		}
 			

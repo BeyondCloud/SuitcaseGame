@@ -4,63 +4,55 @@ using System.Collections;
 public class LifeBar : MonoBehaviour {
 
 
-	 public  float maxTime = 16.0f;
-	 private float currentMaxTime ;
-	 public  static int currentScaleLevel = 1;
-	 public static int scaleFactor = 1;
-
-	 float countDown = 0; 
-
+	public static int life = 3;
+	public GameObject gameover;
+	bool isLoseLife;
+	float oldLife = 0.5f;
+	float newLife = 0.5f;
+	float timer = 0;
+	public Animation anim;
 
 	void Start()
 	{
-		currentMaxTime = maxTime;
-		ScaleFactorUI.factor = scaleFactor;
+		anim.Play("LifeBar");
 	}
-	void FixedUpdate () {
-
-		renderer.material.SetFloat("_Cutoff", Mathf.InverseLerp(-currentMaxTime , currentMaxTime , countDown)); 
-		if(countDown > 0 )
-		   countDown -= Time.deltaTime;
-		else if(currentScaleLevel != 0)
+	void FixedUpdate()
+	{
+		timer += Time.deltaTime;
+		if(isLoseLife)
 		{
-		    
-			currentScaleLevel--;
-			scaleFactor =(int)Mathf.Pow(2,currentScaleLevel);
-			ScaleFactorUI.factor = scaleFactor;
-			currentMaxTime = maxTime/scaleFactor;
-			countDown = currentMaxTime;
-		
+			renderer.material.SetFloat("_Cutoff", Mathf.Lerp(oldLife,newLife,timer*2)); 
+			if(oldLife == newLife)
+				isLoseLife = false;
+		}
+	}
+    public void lossLife()
+	{
+		if(life > 0)
+		   life--;
+		isLoseLife = true;
+		timer = 0;
+		switch(life)
+		{
 
+		   case 2:
+			    anim.Play("shake");
+				newLife = 0.66f;
+		   break;
+		   case 1:
+			    anim.Play("shake");
+			    oldLife = 0.66f;
+				newLife = 0.87f;
+		   break;
+	       case 0:
+			    gameover.SetActive(true);
+			    anim.Play("shake");
+			    oldLife = 0.87f;
+				newLife = 1.00f;
+		   break;
 		}
 
-
 	}
 
-	public void ScaleMgr()
-	{
 
-
-		currentScaleLevel++;
-		scaleFactor = (int)Mathf.Pow(2,currentScaleLevel);
-
-
-		ScaleFactorUI.factor = scaleFactor;
-		currentMaxTime = maxTime/scaleFactor;
-		countDown = currentMaxTime;
-
-	}
-	public void missPenalty()
-	{
-		
-		
-		currentScaleLevel=0;
-		scaleFactor = (int)Mathf.Pow(2,currentScaleLevel);
-		
-		
-		ScaleFactorUI.factor = scaleFactor;
-		currentMaxTime = maxTime/scaleFactor;
-		countDown = currentMaxTime;
-		
-	}
 }

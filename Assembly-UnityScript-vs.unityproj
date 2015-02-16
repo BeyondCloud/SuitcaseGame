@@ -46,8 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Fit All Screen Size\ResolutionFixer.js" />
      <Compile Include="Assets\Scripts\PushByClick.js" />
      <Compile Include="Assets\Scripts\Pusher.js" />
+     <None Include="Assets\Fit All Screen Size\ReadMe.txt" />
      <None Include="Assets\Shader\TextureMask.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity4.6/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
